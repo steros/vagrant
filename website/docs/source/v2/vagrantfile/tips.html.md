@@ -11,6 +11,22 @@ it is Ruby, there are a lot of ways you can shoot yourself in the foot. When
 using some of the tips and tricks on this page, please take care to use them
 correctly.
 
+## Adding multiple clauses
+
+If you want to add multiple clauses to a configuration you need to separate them by comma:
+
+<pre class="prettyprint">
+config.vm.network "public_network",
+  ip: '192.168.0.17',
+  bridge: 'en1: Wi-Fi (AirPort)'
+</pre>
+
+<pre class="prettyprint">
+# THIS DOES NOT WORK!
+config.vm.network "public_network", ip: '192.168.0.17'
+config.vm.network "public_network", bridge: 'en1: Wi-Fi (AirPort)'
+</pre>
+
 ## Loop Over VM Definitions
 
 If you want to apply a slightly different configuration to many
